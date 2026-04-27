@@ -101,16 +101,20 @@ All outputs are reviewed and adjusted manually.
 
 ## 📌 Current Status
 
-Initial setup phase:
-- Project scaffolding
-- AI context (AGENTS + skills)
+Implemented:
+- Clean Angular base setup
+- Routing and layout
+- Dashboard and operations pages
+- Operation model
+- Operation service with Signals and LocalStorage
+- Basic test suite passing
 
 Next steps:
-- Routing and layout
-- Data model and services
-- CRUD operations
-- Dashboard
-- Styling and tests
+- Connect operation list to real data
+- Implement Reactive Forms
+- Add create/edit/delete flows
+- Improve dashboard metrics
+- Add styling and UX refinements
 
 ---
 
