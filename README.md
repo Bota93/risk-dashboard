@@ -1,59 +1,140 @@
-# RiskDashboard
+# Risk Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Angular-based frontend project focused on financial risk operations, designed to simulate real-world enterprise scenarios.
 
-## Development server
+Frontend application built with Angular to manage and visualize financial operations and their associated risk levels.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## 🚀 Project Goal
+
+This project simulates a financial operations dashboard inspired by real-world banking systems, where risk assessment and operational tracking are key.
+
+It focuses on:
+
+- Managing operations (CRUD)
+- Assigning risk levels
+- Filtering and visualizing data
+- Practicing Angular architecture in a realistic business context
+
+The goal is to demonstrate practical knowledge of Angular in a short time frame, focusing on clean structure and maintainability rather than complexity.
+
+---
+
+## 🧱 Tech Stack
+
+- Angular (latest)
+- TypeScript
+- SCSS
+- Angular Router
+- Reactive Forms
+- Signals (state management)
+- LocalStorage (temporary persistence)
+
+---
+
+## ⭐ Key Features
+
+- CRUD operations for financial records
+- Risk level classification (Low, Medium, High)
+- Status tracking (Pending, Approved, Rejected)
+- Filtering and basic data visualization
+- Local persistence using LocalStorage
+
+---
+
+## 🧠 Architecture Approach
+
+- Standalone components (no NgModules)
+- Feature-based structure
+- Services for business logic
+- Clean separation of concerns
+- Minimal but scalable architecture
+
+---
+
+## 📁 Project Structure
+
+```text
+src/app/
+  core/      # models, services
+  features/  # main app features (dashboard, operations)
+  shared/    # reusable components (future)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Additional:
 
-## Code scaffolding
+```text
+ai/
+  AGENTS.md  # AI development guidelines
+  skills/    # structured knowledge for AI-assisted workflows
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+docs/
+  architecture.md
+  decisions.md
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## 🤖 AI-Assisted Development
+
+This project uses structured AI assistance (Copilot / Codex style workflow) with predefined guidelines.
+
+AI is used to:
+- accelerate development
+- improve consistency
+- support architecture decisions
+
+All outputs are reviewed and adjusted manually.
+
+---
+
+## 🎯 What This Project Demonstrates
+
+- Ability to learn and apply Angular quickly
+- Understanding of frontend architecture principles
+- Clean code and maintainable structure
+- Practical use of AI-assisted development workflows
+- Focus on real-world business scenarios
+
+---
+
+## 📌 Current Status
+
+Initial setup phase:
+- Project scaffolding
+- AI context (AGENTS + skills)
+
+Next steps:
+- Routing and layout
+- Data model and services
+- CRUD operations
+- Dashboard
+- Styling and tests
+
+---
+
+## ▶️ Run the project
 
 ```bash
-ng generate --help
+npm install
+npm start
 ```
 
-## Building
+---
 
-To build the project run:
+## 📈 Future Improvements
 
-```bash
-ng build
-```
+- Backend integration (.NET API)
+- Authentication
+- Real-time updates
+- Testing coverage expansion
+- Code quality tools (Sonar-like setup)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 👨‍💻 Author
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Adrián Alcaraz
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Backend Developer (.NET) expanding into frontend architecture with Angular
