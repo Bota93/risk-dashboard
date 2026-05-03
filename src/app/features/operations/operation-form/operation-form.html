@@ -1,5 +1,18 @@
 <section>
-    <h2>{{ isEditMode() ? 'Edit Operation' : 'Create Operation' }}</h2>
+    <div class="section-header">
+        <div class="section-heading">
+            <a class="text-link" routerLink="/operations">Back to operations</a>
+            <h2>{{ isEditMode() ? 'Edit Operation' : 'Create Operation' }}</h2>
+            <p class="section-copy">
+                {{
+                    isEditMode()
+                        ? 'Update the selected financial operation and save the new record.'
+                        : 'Capture a new financial operation for risk tracking and monitoring.'
+                }}
+            </p>
+        </div>
+    </div>
+
     <form [formGroup]="form" (ngSubmit)="submit()">
         <label>
             Client Name
@@ -34,8 +47,13 @@
             <textarea formControlName="description"></textarea>
         </label>
 
-        <button type="submit" [disabled]="form.invalid">
-            {{ isEditMode() ? 'Update' : 'Create' }}
-        </button>
+        <div class="form-actions">
+            <a class="action-link action-link--ghost" routerLink="/operations">
+                Cancel
+            </a>
+            <button class="action-link action-link--primary" type="submit" [disabled]="form.invalid">
+                {{ isEditMode() ? 'Update' : 'Create' }}
+            </button>
+        </div>
     </form>
 </section>

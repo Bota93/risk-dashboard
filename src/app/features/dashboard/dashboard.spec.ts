@@ -1,5 +1,6 @@
 import { signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { Operation } from '../../core/models/operation.model';
 import { OperationService } from '../../core/services/operation';
 
@@ -20,6 +21,7 @@ describe('Dashboard', () => {
     await TestBed.configureTestingModule({
       imports: [Dashboard],
       providers: [
+        provideRouter([]),
         { provide: OperationService, useValue: operationServiceMock },
       ],
     }).compileComponents();

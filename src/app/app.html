@@ -1,10 +1,20 @@
 <header class="app-header">
   <h1>Risk Dashboard</h1>
 
-  <nav>
-    <a routerLink="/">Dashboard</a>
-    <a routerLink="/operations">Operations</a>
-    <a routerLink="/operations/new">New Operation</a>
+  <nav class="app-nav">
+    <a
+      routerLink="/"
+      routerLinkActive="is-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Dashboard
+    </a>
+    <a routerLink="/operations" routerLinkActive="is-active">
+      Operations
+    </a>
+    <a routerLink="/operations/new" routerLinkActive="is-active">
+      New Operation
+    </a>
   </nav>
 </header>
 

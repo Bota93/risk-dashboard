@@ -24,9 +24,11 @@ label:last-of-type {
   grid-column: 1 / -1;
 }
 
-button {
-  justify-self: start;
-  min-width: 180px;
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 0.25rem;
 }
 
@@ -39,8 +41,11 @@ button {
     grid-column: auto;
   }
 
-  button {
+  .form-actions {
     width: 100%;
-    justify-self: stretch;
+  }
+
+  .form-actions .action-link {
+    flex: 1 1 100%;
   }
 }

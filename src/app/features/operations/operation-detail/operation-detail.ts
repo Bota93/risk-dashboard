@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { OperationService } from '../../../core/services/operation';
@@ -5,7 +6,7 @@ import { OperationService } from '../../../core/services/operation';
 @Component({
   selector: 'app-operation-detail',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DatePipe],
   templateUrl: './operation-detail.html',
   styleUrl: './operation-detail.scss',
 })

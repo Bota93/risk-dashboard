@@ -1,13 +1,13 @@
 import { Component, computed, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { OperationService } from '../../../core/services/operation';
 import { OperationStatus, RiskLevel } from '../../../core/models/operation.model';
 
 @Component({
   selector: 'app-operation-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './operation-form.html',
   styleUrl: './operation-form.scss',
 })

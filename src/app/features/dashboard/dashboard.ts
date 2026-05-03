@@ -1,9 +1,11 @@
 import { Component, inject, computed } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { OperationService } from '../../core/services/operation';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

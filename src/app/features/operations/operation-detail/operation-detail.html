@@ -1,21 +1,63 @@
 <section>
     @if (operation(); as op) {
-        <a routerLink="/operations">Back to Operations</a>
+        <div class="section-header">
+            <div class="section-heading">
+                <a class="text-link" routerLink="/operations">Back to operations</a>
+                <h2>{{ op.clientName }}</h2>
+                <p class="section-copy">
+                    Detailed record of the selected financial operation.
+                </p>
+            </div>
 
-        <h2>{{ op.clientName }}</h2>
+            <div class="section-toolbar">
+                <a
+                    class="action-link action-link--secondary"
+                    [routerLink]="['/operations', op.id, 'edit']"
+                >
+                    Edit Operation
+                </a>
+            </div>
+        </div>
 
-        <article>
-            <p><strong>Amount:</strong> {{ op.amount }} €</p>
-            <p><strong>Status:</strong> {{ op.status }}</p>
-            <p><strong>Risk:</strong> {{ op.riskLevel }}</p>
-            <p><strong>Description:</strong> {{ op.description }}</p>
-            <p><strong>Created:</strong> {{ op.createdAt }}</p>
+        <article class="card detail-card">
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <span class="detail-label">Amount</span>
+                    <strong class="detail-value">{{ op.amount }} €</strong>
+                </div>
 
-            <a [routerLink]="['/operations', op.id, 'edit']">Edit Operation</a>
+                <div class="detail-item">
+                    <span class="detail-label">Status</span>
+                    <strong class="detail-value">{{ op.status }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-label">Risk</span>
+                    <strong class="detail-value">{{ op.riskLevel }}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-label">Created</span>
+                    <strong class="detail-value">
+                        {{ op.createdAt | date:'HH:mm dd/MM/yyyy' }}
+                    </strong>
+                </div>
+
+                <div class="detail-item detail-item--full">
+                    <span class="detail-label">Description</span>
+                    <p>{{ op.description }}</p>
+                </div>
+            </div>
         </article>
     } @else {
-        <h2>Operation not found</h2>
-        <p>The selected operation does not exist.</p>
-        <a routerLink="/operations">Back to Operations</a>
+        <div class="empty-state">
+            <h2>Operation not found</h2>
+            <p>The selected operation does not exist.</p>
+            <div class="section-toolbar">
+                <a class="action-link action-link--secondary" routerLink="/operations">
+                    Back to Operations
+                </a>
+            </div>
+        </div>
     }
 </section>

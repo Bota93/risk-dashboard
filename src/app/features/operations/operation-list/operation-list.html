@@ -1,24 +1,52 @@
 <section>
-    <h2>Operations</h2>
-    <a routerLink="/operations/new">Create Operation</a>
+    <div class="section-header">
+        <div class="section-heading">
+            <h2>Operations</h2>
+            <p class="section-copy">
+                Review, update and maintain financial operations in a single place.
+            </p>
+        </div>
+
+        <div class="section-toolbar">
+            <a class="action-link action-link--primary" routerLink="/operations/new">
+                Create Operation
+            </a>
+        </div>
+    </div>
 
     @if (operationService.operations().length === 0) {
-    <p>No operations yet.</p>
+    <div class="empty-state">
+        <p>No operations yet.</p>
+        <div class="section-toolbar">
+            <a class="action-link action-link--primary" routerLink="/operations/new">
+                Create the first operation
+            </a>
+        </div>
+    </div>
     }
 
     @for (op of operationService.operations(); track op.id) {
-    <article class="card">
+    <article class="card operation-card">
         <h3>{{ op.clientName }}</h3>
-        <p>Amount: {{ op.amount }} €</p>
+        <p class="operation-card__amount">Amount: {{ op.amount }} €</p>
         <p>Status: {{ op.status }}</p>
         <p>Risk: {{ op.riskLevel }}</p>
 
-        <a [routerLink]="['/operations', op.id]">View Details</a>
-        <a [routerLink]="['/operations', op.id, 'edit']">Edit</a>
-
-        <button (click)="deleteOperation(op.id)">
-            Delete
-        </button>
+        <div class="card-actions">
+            <a class="action-link action-link--secondary" [routerLink]="['/operations', op.id]">
+                View Details
+            </a>
+            <a class="action-link action-link--ghost" [routerLink]="['/operations', op.id, 'edit']">
+                Edit
+            </a>
+            <button
+                class="action-link action-link--danger"
+                type="button"
+                (click)="deleteOperation(op.id)"
+            >
+                Delete
+            </button>
+        </div>
     </article>
     }
 </section>

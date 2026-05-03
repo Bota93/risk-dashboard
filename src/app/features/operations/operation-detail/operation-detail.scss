@@ -5,10 +5,18 @@
 section {
   min-height: 220px;
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   align-content: start;
 }
 
-section p {
-  max-width: 42rem;
+.detail-card {
+  padding: 1.25rem;
+}
+
+.detail-item--full {
+  grid-column: 1 / -1;
+}
+
+.detail-item--full p {
+  color: var(--ink-soft);
 }

@@ -1,30 +1,47 @@
 <section>
-    <h2>Dashboard</h2>
+    <div class="section-header">
+        <div class="section-heading">
+            <h2>Dashboard</h2>
+            <p class="section-copy">
+                High-level visibility into registered operations and current
+                portfolio exposure.
+            </p>
+        </div>
+
+        <div class="section-toolbar">
+            <a class="action-link action-link--secondary" routerLink="/operations">
+                View Operations
+            </a>
+            <a class="action-link action-link--primary" routerLink="/operations/new">
+                New Operation
+            </a>
+        </div>
+    </div>
 
     <div class="metrics">
-        <div class="card">
+        <article class="card metric-card">
             <p>Total</p>
             <strong>{{ total() }}</strong>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card metric-card">
             <p>Pending</p>
             <strong>{{ pending() }}</strong>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card metric-card">
             <p>Approved</p>
             <strong>{{ approved() }}</strong>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card metric-card">
             <p>Rejected</p>
             <strong>{{ rejected() }}</strong>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card metric-card">
             <p>High Risk</p>
             <strong>{{ highRisk() }}</strong>
-        </div>
+        </article>
     </div>
 </section>
