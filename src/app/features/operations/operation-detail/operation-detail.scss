@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+section {
+  min-height: 220px;
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+section p {
+  max-width: 42rem;
+}
