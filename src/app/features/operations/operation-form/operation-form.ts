@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OperationService } from '../../../core/services/operation';
 import { OperationStatus, RiskLevel } from '../../../core/models/operation.model';
 
@@ -15,6 +15,11 @@ export class OperationForm {
   private fb = inject(FormBuilder);
   private operationService = inject(OperationService);
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
+
+  private operationId = this.route.snapshot.paramMap.get('id');
+
+  isEditMode = computed(() => Boolean(this.operationId));
 
   form = this.fb.nonNullable.group({
     clientName: ['', Validators.required],
@@ -24,10 +29,33 @@ export class OperationForm {
     description: [''],
   });
 
+  constructor() {
+    if (!this.operationId) return;
+
+    const operation = this.operationService.getOperationById(this.operationId);
+
+    if (!operation) return;
+
+    this.form.patchValue({
+      clientName: operation.clientName,
+      amount: operation.amount,
+      status: operation.status,
+      riskLevel: operation.riskLevel,
+      description: operation.description,
+    });
+  }
+
   submit(): void {
     if (this.form.invalid) return;
 
-    this.operationService.addOperation(this.form.getRawValue());
+    const formValue = this.form.getRawValue();
+
+    if (this.operationId) {
+      this.operationService.updateOperation(this.operationId, formValue);
+    } else {
+      this.operationService.addOperation(formValue);
+    }
+
     this.router.navigate(['/operations']);
   }
 }

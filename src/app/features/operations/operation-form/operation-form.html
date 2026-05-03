@@ -1,5 +1,5 @@
 <section>
-    <h2>Operation Form</h2>
+    <h2>{{ isEditMode() ? 'Edit Operation' : 'Create Operation' }}</h2>
     <form [formGroup]="form" (ngSubmit)="submit()">
         <label>
             Client Name
@@ -35,7 +35,7 @@
         </label>
 
         <button type="submit" [disabled]="form.invalid">
-            Create
+            {{ isEditMode() ? 'Update' : 'Create' }}
         </button>
     </form>
 </section>

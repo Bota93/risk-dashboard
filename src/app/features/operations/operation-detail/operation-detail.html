@@ -1,4 +1,21 @@
 <section>
-    <h2>Operation Detail</h2>
-    <p>Detailed information for a financial operation.</p>
+    @if (operation(); as op) {
+        <a routerLink="/operations">Back to Operations</a>
+
+        <h2>{{ op.clientName }}</h2>
+
+        <article>
+            <p><strong>Amount:</strong> {{ op.amount }} €</p>
+            <p><strong>Status:</strong> {{ op.status }}</p>
+            <p><strong>Risk:</strong> {{ op.riskLevel }}</p>
+            <p><strong>Description:</strong> {{ op.description }}</p>
+            <p><strong>Created:</strong> {{ op.createdAt }}</p>
+
+            <a [routerLink]="['/operations', op.id, 'edit']">Edit Operation</a>
+        </article>
+    } @else {
+        <h2>Operation not found</h2>
+        <p>The selected operation does not exist.</p>
+        <a routerLink="/operations">Back to Operations</a>
+    }
 </section>

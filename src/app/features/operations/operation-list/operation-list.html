@@ -13,6 +13,9 @@
         <p>Status: {{ op.status }}</p>
         <p>Risk: {{ op.riskLevel }}</p>
 
+        <a [routerLink]="['/operations', op.id]">View Details</a>
+        <a [routerLink]="['/operations', op.id, 'edit']">Edit</a>
+
         <button (click)="deleteOperation(op.id)">
             Delete
         </button>
