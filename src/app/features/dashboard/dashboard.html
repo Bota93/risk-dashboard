@@ -1,2 +1,30 @@
-<h2>Dashboard</h2>
-<p>Overview of financial risks</p>
+<section>
+    <h2>Dashboard</h2>
+
+    <div class="metrics">
+        <div class="card">
+            <p>Total</p>
+            <strong>{{ total() }}</strong>
+        </div>
+
+        <div class="card">
+            <p>Pending</p>
+            <strong>{{ pending() }}</strong>
+        </div>
+
+        <div class="card">
+            <p>Approved</p>
+            <strong>{{ approved() }}</strong>
+        </div>
+
+        <div class="card">
+            <p>Rejected</p>
+            <strong>{{ rejected() }}</strong>
+        </div>
+
+        <div class="card">
+            <p>High Risk</p>
+            <strong>{{ highRisk() }}</strong>
+        </div>
+    </div>
+</section>
