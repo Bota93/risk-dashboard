@@ -35,11 +35,13 @@ The goal is to demonstrate practical knowledge of Angular in a short time frame,
 
 ## ⭐ Key Features
 
-- CRUD operations for financial records
+- Create and list financial operations
+- Delete operations with confirmation
 - Risk level classification (Low, Medium, High)
 - Status tracking (Pending, Approved, Rejected)
-- Filtering and basic data visualization
+- Dashboard metrics powered by Angular Signals
 - Local persistence using LocalStorage
+- Reactive form validation for operation creation
 
 ---
 
@@ -68,10 +70,6 @@ Additional:
 ai/
   AGENTS.md  # AI development guidelines
   skills/    # structured knowledge for AI-assisted workflows
-
-docs/
-  architecture.md
-  decisions.md
 ```
 
 ---
@@ -104,17 +102,20 @@ All outputs are reviewed and adjusted manually.
 Implemented:
 - Clean Angular base setup
 - Routing and layout
-- Dashboard and operations pages
 - Operation model
-- Operation service with Signals and LocalStorage
-- Basic test suite passing
+- Operation service with Signals and LocalStorage persistence
+- Dashboard with live metrics for total, pending, approved, rejected, and high-risk operations
+- Operations list connected to real data with create navigation and delete confirmation
+- Operation form built with Reactive Forms validation
+- Unit tests for dashboard, operation list, and operation form flows
+- Test suite passing
 
 Next steps:
-- Connect operation list to real data
-- Implement Reactive Forms
-- Add create/edit/delete flows
-- Improve dashboard metrics
-- Add styling and UX refinements
+- Implement operation detail view
+- Reuse the form for edit flow
+- Add filtering/search for operations
+- Improve styling and UX refinements
+- Expand service-level and integration-style test coverage
 
 ---
 
